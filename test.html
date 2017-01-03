@@ -1,0 +1,21 @@
+<!DOCType HTML>
+<html>
+<head>
+<title>Testing JavaScript</title>
+</head>
+<body>
+<script type="text/javascript" src="ExcelPlus-master/2.4.1/sheetjs.all.min.js"></script>
+<script type="text/javascript" src="ExcelPlus-master/2.4.1/excelplus-2.4.1.min.js"></script>
+<script type="text/javascript">
+document.write("The Excel file will download NOW!");
+
+var ep=new ExcelPlus();
+ep.createFile("Book1");
+ep.write({ "content":[ ["A1","B1","C1"] ] });
+ep.createSheet("Book2");
+ep.write({ "cell":"A1", "content":"A1" });
+ep.write({ "sheet":"Book1", "cell":"D1", "content":new Date() });
+ep.saveAs("demo.xlsx");
+</script>
+</body>
+</html>
